@@ -24,7 +24,7 @@ function verify_nb() {
     } else {
         
         document.body.style.backgroundColor = "#32CD32";
-        document.getElementsByClassName("message")[0].textContent = "Good Job You did it ✊🏻 👊🏻 🖕🏻"
+        document.getElementsByClassName("message")[0].textContent = "Good Job You did it ✊🏻 👊🏻 "
         document.querySelector(".check").disabled= true;
         return ;
     }
@@ -32,7 +32,7 @@ function verify_nb() {
 function play_again(){
   
     document.getElementsByClassName("score")[0].innerHTML = currentScore;
-
+    document.querySelector(".guess").value = "";
     document.getElementsByClassName("message")[0].textContent = "Start guessing..."
 
     document.querySelector(".check").disabled= false;
