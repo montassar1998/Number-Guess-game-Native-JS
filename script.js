@@ -4,7 +4,8 @@ var currentNumber = Math.floor(Math.random() * 20 + 1)
 
 
 function verify_nb() {
-    console.log(currentNumber)
+    console.log("nb ="+currentNumber)
+
     var userInput = document.querySelector(".guess").value
     console.log(document.getElementsByClassName("score")[0].textContent)
     if (document.getElementsByClassName("score")[0].textContent == 1) {
@@ -31,17 +32,21 @@ function verify_nb() {
 }
 function play_again(){
   
-    document.getElementsByClassName("score")[0].innerHTML = currentScore;
+    
     document.querySelector(".guess").value = "";
-    document.getElementsByClassName("message")[0].textContent = "Start guessing..."
-
     document.querySelector(".check").disabled= false;
     document.body.style.backgroundColor = "#222";
     currentNumber = Math.floor(Math.random() * 20 + 1)
-    highestScore = Math.max(highestScore, currentScore)
+    console.log("nnn"+document.querySelector(".message").textContent);
+    var msg_control_modify_critereon = document.querySelector(".message");
+    if((msg_control_modify_critereon.textContent=="Good Job You did it ✊🏻 👊🏻 ") ){
+        highestScore = Math.max(highestScore, currentScore)
+        currentScore = 0;
+    }
+    document.getElementsByClassName("message")[0].textContent = "Start guessing..."
+    
     document.getElementsByClassName("highscore")[0].innerHTML = highestScore;
     document.getElementsByClassName("score")[0].innerHTML = "20";
-
     currentScore = 20;
 }
 function init() {
